@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 export function ClustrMapsWidget() {
   useEffect(() => {
     // ClustrMaps Site ID
-    const siteId = 'G1uK8RAGNiM708eP6pxOLpptVgfkoWrbhFMPSt5m89c'
+    const siteId = '0z6rM8EvlBeylymKmr4PTVB4GhLbl_qNPKISkqFFJGg'
 
     // Dynamically load ClustrMaps script
     const scriptId = 'clstr_globe'
