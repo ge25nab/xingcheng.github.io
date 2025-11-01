@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
-// Use custom domain (empty basePath) by default, or GitHub Pages subpath if explicitly set
+// Configuration for basePath
+// - Default: Use custom domain (empty basePath) for xingcheng-zhou.com
+// - If GITHUB_PAGES=true: Use GitHub Pages subpath (/xingcheng.github.io)
+// - If CUSTOM_DOMAIN is set: Use custom domain (empty basePath)
 const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+const customDomain = process.env.CUSTOM_DOMAIN || 'xingcheng-zhou.com'
 const basePath = isGitHubPages ? '/xingcheng.github.io' : ''
-// For custom domain (xingcheng-zhou.com), basePath should be empty string
+
+// Log build configuration
+console.log('\n📦 Build Configuration:')
+console.log(`   Domain: ${customDomain}`)
+console.log(`   Base Path: ${basePath || '(empty - for custom domain)'}`)
+console.log(`   Mode: ${isGitHubPages ? 'GitHub Pages' : 'Custom Domain'}\n`)
 
 const nextConfig = {
   basePath,
@@ -20,6 +29,7 @@ const nextConfig = {
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,
+    NEXT_PUBLIC_CUSTOM_DOMAIN: customDomain,
   },
 }
 
