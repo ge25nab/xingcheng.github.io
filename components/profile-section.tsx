@@ -1,6 +1,7 @@
 import React from 'react'
 import { siteConfig } from '@/lib/config'
 import { SocialLinks } from '@/components/social-links'
+import { assetPath } from '@/lib/utils'
 
 export function ProfileSection() {
   const profile = siteConfig.profile
@@ -125,7 +126,7 @@ export function ProfileSection() {
         <div className="flex flex-col items-center md:items-end">
           <div className="relative w-full aspect-square max-w-[250px] rounded-lg overflow-hidden shadow-lg mb-4 bg-background">
             <img
-              src="/assets/img/profile.jpg"
+              src={assetPath('/assets/img/profile.jpg')}
               alt={siteConfig.author.nameWithChinese || siteConfig.author.name}
               className="w-full h-full object-cover"
             />

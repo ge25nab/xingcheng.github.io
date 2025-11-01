@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
+import { assetPath } from '@/lib/utils'
 
 interface NationalProjectCardProps {
   project: NationalProject
@@ -20,7 +21,7 @@ export function NationalProjectCard({ project }: NationalProjectCardProps) {
           {project.image && (
             <div className="w-full rounded-lg overflow-hidden bg-background flex-shrink-0 max-h-[320px] flex items-center justify-center">
               <img
-                src={project.image}
+                src={project.image ? assetPath(project.image) : ''}
                 alt={project.title}
                 className="max-w-full max-h-full w-auto h-auto object-contain"
                 loading="lazy"

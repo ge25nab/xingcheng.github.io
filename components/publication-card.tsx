@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Publication } from '@/lib/content'
 import { Button } from '@/components/ui/button'
 import { ExternalLink } from 'lucide-react'
+import { assetPath } from '@/lib/utils'
 
 export function PublicationCard({ publication }: { publication: Publication }) {
   const authorsList = publication.authors.map((author, index) => {
@@ -25,7 +26,7 @@ export function PublicationCard({ publication }: { publication: Publication }) {
         {publication.image && (
           <div className="w-full rounded-lg overflow-hidden bg-background flex-shrink-0 max-h-[400px] flex items-center justify-center">
             <img
-              src={publication.image}
+              src={publication.image ? assetPath(publication.image) : ''}
               alt={publication.title}
               className="max-w-full max-h-full w-auto h-auto object-contain"
               loading="lazy"
