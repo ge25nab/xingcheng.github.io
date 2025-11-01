@@ -3,7 +3,7 @@ import { getSiteConfig, getPublications } from './content'
 export function generateRSS() {
   const config = getSiteConfig()
   const publications = getPublications()
-  const baseUrl = 'https://xingcheng.github.io'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://ge25nab.github.io/xingcheng.github.io'
   const siteUrl = baseUrl
   const siteTitle = config.site.title
   const siteDescription = config.site.description
@@ -26,7 +26,7 @@ export function generateRSS() {
         ? pub.links[codeLink]
         : firstLink && pub.links[firstLink]
         ? pub.links[firstLink]
-        : `${siteUrl}/publications#${pub.id}`
+        : `${siteUrl}#${pub.id}`
       const pubDate = new Date(pub.year, 0, 1).toUTCString()
 
       return `    <item>
