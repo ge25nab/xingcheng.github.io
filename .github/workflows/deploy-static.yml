@@ -29,12 +29,18 @@ jobs:
       
     - name: Generate feeds
       run: npm run generate:feeds
+      env:
+        NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL || 'https://ge25nab.github.io/xingcheng.github.io' }}
+        GITHUB_PAGES: 'true'
       
     - name: Build
       run: npm run build
       env:
         NEXT_PUBLIC_BASE_URL: ${{ secrets.BASE_URL || 'https://ge25nab.github.io/xingcheng.github.io' }}
         GITHUB_PAGES: 'true'
+    
+    - name: Ensure .nojekyll exists
+      run: touch out/.nojekyll || echo "" > out/.nojekyll
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
