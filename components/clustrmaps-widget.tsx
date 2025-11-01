@@ -86,7 +86,7 @@ export function ClustrMapsWidget() {
         {/* ClustrMaps container */}
         <div 
           id="clustrmaps-container" 
-          className="w-full max-w-[432px] mx-auto h-[576px] bg-muted/30 rounded-lg overflow-hidden flex items-center justify-center"
+          className="w-full max-w-[144px] mx-auto h-[192px] bg-muted/30 rounded-lg overflow-hidden flex items-center justify-center"
         >
           {/* ClustrMaps map will be injected here by the script */}
           <div className="text-sm text-muted-foreground text-center py-4">Loading visitor map...</div>
