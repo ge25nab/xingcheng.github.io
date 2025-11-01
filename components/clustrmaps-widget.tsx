@@ -10,10 +10,10 @@ import { useEffect } from 'react'
 export function ClustrMapsWidget() {
   useEffect(() => {
     // ClustrMaps Site ID
-    const siteId = 'vgBpPJGbj9WH3nfc_5fBn1LFYpP9JZ-CrGbwArHRQTg'
+    const siteId = 'G1uK8RAGNiM708eP6pxOLpptVgfkoWrbhFMPSt5m89c'
 
     // Dynamically load ClustrMaps script
-    const scriptId = 'clustrmaps-script'
+    const scriptId = 'clstr_globe'
     
     // Check if script already exists
     if (document.getElementById(scriptId)) {
@@ -27,16 +27,19 @@ export function ClustrMapsWidget() {
       return
     }
 
+    // Clear loading message
+    container.innerHTML = ''
+
     const script = document.createElement('script')
     script.type = 'text/javascript'
     script.id = scriptId
-    // ClustrMaps script with your Site ID
-    script.src = `https://clustrmaps.com/map_v2.js?d=${siteId}&cl=ffffff&w=a`
+    // ClustrMaps globe script with your Site ID - use https protocol
+    script.src = `https://clustrmaps.com/globe.js?d=${siteId}`
     script.async = true
     script.defer = true
 
-    // Append script to document body (ClustrMaps typically expects it in body)
-    document.body.appendChild(script)
+    // Append script to container so globe renders inside it
+    container.appendChild(script)
 
     return () => {
       // Cleanup on unmount
