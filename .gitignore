@@ -9,6 +9,8 @@ coverage/
 # Next.js
 .next/
 out/
+out-gh-pages/
+out-custom-domain/
 build/
 dist/
 

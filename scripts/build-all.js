@@ -47,6 +47,10 @@ function build(env, targetDir) {
     
     // Build
     console.log('   Building...');
+    // For custom domain, unset GITHUB_PAGES if it's empty
+    if (env.GITHUB_PAGES === '') {
+      delete buildEnv.GITHUB_PAGES;
+    }
     execSync('next build', {
       env: buildEnv,
       stdio: 'inherit',
