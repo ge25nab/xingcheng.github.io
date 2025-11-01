@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
+// Use custom domain (empty basePath) by default, or GitHub Pages subpath if explicitly set
 const isGitHubPages = process.env.GITHUB_PAGES === 'true'
 const basePath = isGitHubPages ? '/xingcheng.github.io' : ''
+// For custom domain (xingcheng-zhou.com), basePath should be empty string
 
 const nextConfig = {
   basePath,
