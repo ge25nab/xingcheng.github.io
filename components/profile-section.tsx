@@ -96,6 +96,9 @@ export function ProfileSection() {
 
   return (
     <section className="py-12 border-b">
+      <h2 className="mb-4 text-2xl font-bold">
+        About Me
+      </h2>
       <div className="grid gap-8 md:grid-cols-[1fr_250px]">
         {/* Profile Content */}
         <div className="space-y-6">

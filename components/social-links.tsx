@@ -12,7 +12,7 @@ export function SocialLinks() {
         className="text-2xl text-foreground hover:text-primary transition-colors"
         aria-label="Email"
       >
-        <Mail className="h-6 w-6" />
+        <Mail className="h-12 w-12" />
       </Link>
       <Link
         href={siteConfig.links.googleScholar}
@@ -21,7 +21,7 @@ export function SocialLinks() {
         className="text-2xl text-foreground hover:text-primary transition-colors"
         aria-label="Google Scholar"
       >
-        <GraduationCap className="h-6 w-6" />
+        <GraduationCap className="h-12 w-12" />
       </Link>
       <Link
         href={siteConfig.links.githubPersonal}
@@ -30,7 +30,7 @@ export function SocialLinks() {
         className="text-2xl text-foreground hover:text-primary transition-colors"
         aria-label="GitHub"
       >
-        <Github className="h-6 w-6" />
+        <Github className="h-12 w-12" />
       </Link>
       <Link
         href={siteConfig.links.tumProfile}
@@ -39,7 +39,7 @@ export function SocialLinks() {
         className="text-2xl text-foreground hover:text-primary transition-colors"
         aria-label="TUM Profile"
       >
-        <Building2 className="h-6 w-6" />
+        <Building2 className="h-12 w-12" />
       </Link>
       {siteConfig.links.linkedin && (
         <Link
@@ -49,7 +49,7 @@ export function SocialLinks() {
           className="text-2xl text-foreground hover:text-primary transition-colors"
           aria-label="LinkedIn"
         >
-          <Linkedin className="h-6 w-6" />
+          <Linkedin className="h-12 w-12" />
         </Link>
       )}
     </div>
