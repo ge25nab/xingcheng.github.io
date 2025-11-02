@@ -5,35 +5,32 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { assetPath } from '@/lib/utils'
+import { getSiteConfig } from '@/lib/content'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const siteConfig = getSiteConfig()
+
 export const metadata: Metadata = {
-  title: 'Xingcheng Zhou | TUM',
-  description:
-    'Vision Language Action research for autonomous driving and intelligent infrastructure',
-  keywords: [
-    'autonomous driving',
-    'vision language model',
-    'world model',
-    'trajectory planning',
-    'cooperative perception',
-    'dataset',
-    'TUM',
-  ],
-  authors: [{ name: 'Xingcheng Zhou' }],
+  title: siteConfig.site.title,
+  description: siteConfig.site.description,
+  keywords: siteConfig.site.keywords.split(', '),
+  authors: [{ name: siteConfig.author.name }],
+  icons: {
+    icon: assetPath('/favicon.ico'),
+    shortcut: assetPath('/favicon.ico'),
+    apple: assetPath('/favicon.ico'),
+  },
   openGraph: {
-    title: 'Xingcheng Zhou | TUM',
-    description:
-      'Vision Language Action research for autonomous driving and intelligent infrastructure',
+    title: siteConfig.site.title,
+    description: siteConfig.site.description,
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Xingcheng Zhou | TUM',
-    description:
-      'Vision Language Action research for autonomous driving and intelligent infrastructure',
+    title: siteConfig.site.title,
+    description: siteConfig.site.description,
   },
 }
 
@@ -44,9 +41,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href={assetPath('/favicon.ico')} />
-      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <div className="flex min-h-screen flex-col">
